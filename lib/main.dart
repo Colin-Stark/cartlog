@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const CartLog());
+void main() {
+  runApp(
+    const CartLog(),
+  );
+}
 
 class CartLog extends StatelessWidget {
   const CartLog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: Homies());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Homies(),
+    );
   }
 }
 
