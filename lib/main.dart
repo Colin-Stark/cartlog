@@ -1,3 +1,4 @@
+import 'package:cartlog/model/database.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,8 +27,24 @@ class Homies extends StatefulWidget {
 }
 
 class _HomiesState extends State<Homies> {
+  Snack carty = Snack();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: TextButton(
+            onPressed: () async {
+              List<Map> response = await carty.readData('SELECT * FROM cart');
+              debugPrint(response.toString());
+            },
+            child: const Text('SHOW DB'),
+          ),
+        ),
+      ],
+    ));
   }
 }
